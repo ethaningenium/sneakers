@@ -6,7 +6,7 @@ const Input = () => {
   const [value, setValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   return (
-    <div className="w-full bg-zinc-100 flex py-3 rounded-xl relative">
+    <div className="w-full flex bg-zinc-100 py-3 rounded-xl relative">
       <input
         value={value}
         onChange={(e) => {

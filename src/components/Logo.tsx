@@ -1,12 +1,11 @@
-const Logo = (props: { width: number }) => {
+const Logo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
   const logoOrange = "#F97316";
   const logoBlue = "#1E3A8A";
   //blue: blue-900, orange: orange-500
   return (
     <svg
+      {...props}
       xmlns="http://www.w3.org/2000/svg"
-      className="h-auto"
-      width={`${props.width}px`}
       viewBox="0 0 877 185"
       fill="none"
     >

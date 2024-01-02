@@ -1,15 +1,10 @@
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import { routePath } from "./route";
 
 const Top = () => {
-  const routePath = [
-    { title: "Главная", path: "/" },
-    { title: "Каталог", path: "/" },
-    { title: "Доставка и оплата", path: "/" },
-    { title: "Контакты", path: "/" },
-  ];
   return (
-    <div className="w-full bg-blue-900 flex justify-center text-blue-100 text-sm font-light">
+    <div className="w-full bg-blue-900 hidden md:flex justify-center text-blue-100 text-sm font-light">
       <div className="container py-2 flex items-center justify-between">
         <div className="flex gap-2 items-center">
           <MapPin className="text-white" strokeWidth={1.2} />

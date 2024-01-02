@@ -9,4 +9,5 @@ export type ProductType = {
   price: number;
   oldprice: number;
   rating: number;
+  isnew: boolean;
 };
