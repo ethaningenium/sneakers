@@ -19,9 +19,9 @@ const MenuContent = (props: { setOpen: (elem: boolean) => void }) => {
         <Input />
       </div>
       <div className="flex flex-col items-center gap-4">
-        {routePath.map((elem) => {
+        {routePath.map((elem, i) => {
           return (
-            <Link to={elem.path} className="text-zinc-600">
+            <Link key={i} to={elem.path} className="text-zinc-600">
               {elem.title}
             </Link>
           );

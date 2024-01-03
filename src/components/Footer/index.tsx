@@ -15,9 +15,13 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-3 lg:items-start items-center">
           <h3 className="font-medium text-white mb-4">Разделы</h3>
-          {routePath.map((elem) => {
+          {routePath.map((elem, i) => {
             return (
-              <Link to={elem.path} className="text-blue-100 font-light text-xs">
+              <Link
+                key={i}
+                to={elem.path}
+                className="text-blue-100 font-light text-xs"
+              >
                 {elem.title}
               </Link>
             );

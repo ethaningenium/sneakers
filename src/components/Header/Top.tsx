@@ -11,9 +11,9 @@ const Top = () => {
           <span>Москва</span>
         </div>
         <div className="flex gap-12 items-center">
-          {routePath.map((elem) => {
+          {routePath.map((elem, i) => {
             return (
-              <Link to={elem.path} preventScrollReset={true}>
+              <Link key={i} to={elem.path} preventScrollReset={true}>
                 {elem.title}
               </Link>
             );
