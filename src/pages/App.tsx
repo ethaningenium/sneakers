@@ -5,8 +5,9 @@ function App() {
   return (
     <>
       <Header />
+
       <div className="w-full h-96 bg-zinc-100 flex justify-center items-center">
-        Body
+        body
       </div>
       <Footer />
     </>
