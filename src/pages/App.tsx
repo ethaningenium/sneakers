@@ -1,7 +1,16 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 function App() {
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <div className="w-full h-96 bg-zinc-100 flex justify-center items-center">
+        Body
+      </div>
+      <Footer />
+    </>
+  );
 }
 
 export default App;
