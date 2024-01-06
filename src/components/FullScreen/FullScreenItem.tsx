@@ -12,7 +12,7 @@ const FullScreenItem: React.FC<ProductType> = (props) => {
   const [currentColor, setCurrentColor] = useState<string | null>(null);
   const [currentSize, setCurrentSize] = useState<number | null>(null);
   const { setItemToCart, cartitems } = useCart();
-  const { data, isLoading } = useQuery({
+  const { data } = useQuery({
     queryKey: ["items"],
     queryFn: fetchAll,
   });
@@ -20,6 +20,8 @@ const FullScreenItem: React.FC<ProductType> = (props) => {
   const thisProductInCartCount = cartitems.reduce((acc, elem) => {
     if (elem.id === props.id) {
       acc += 1;
+    } else {
+      console.log(data);
     }
     return acc;
   }, 0);
