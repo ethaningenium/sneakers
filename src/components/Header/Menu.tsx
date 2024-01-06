@@ -14,7 +14,7 @@ const Menu = () => {
       <div
         onClick={() => setOpen((prev) => !prev)}
         className={cn(
-          "fixed top-0 left-0 w-screen h-screen backdrop-blur opacity-0 duration-300 hidden z-40",
+          "fixed top-0 left-0 w-screen h-dvh backdrop-blur opacity-0 duration-300 hidden z-40",
           {
             "opacity-100 flex": open,
           }
