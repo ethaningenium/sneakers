@@ -1,10 +1,15 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { ProductType } from "./contract";
+
+type CartType = {
+  id: string;
+  size: number;
+  color: string;
+};
 
 interface BearState {
-  cartitems: ProductType[];
-  setItemToCart: (item: ProductType) => void;
+  cartitems: CartType[];
+  setItemToCart: (item: CartType) => void;
   deleteItemFromCart: (id: string) => void;
 }
 

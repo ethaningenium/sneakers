@@ -3,7 +3,7 @@ import { devtools } from "zustand/middleware";
 import { ProductType } from "./contract";
 
 interface BearState {
-  likedItems: ProductType[];
+  likedItems: string[];
   setItemToLikedList: (item: ProductType) => void;
   deleteItemFromLikedList: (id: string) => void;
 }
@@ -12,11 +12,11 @@ const useLiked = create<BearState>()(
   devtools((set) => ({
     likedItems: [],
     setItemToLikedList: (item) => {
-      set((state) => ({ likedItems: [...state.likedItems, item] }));
+      set((state) => ({ likedItems: [...state.likedItems, item.id] }));
     },
     deleteItemFromLikedList: (id) => {
       set((state) => ({
-        likedItems: state.likedItems.filter((elem) => elem.id !== id),
+        likedItems: state.likedItems.filter((elem) => elem !== id),
       }));
     },
   }))

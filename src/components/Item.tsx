@@ -1,20 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
 import { ProductType } from "@/lib/contract";
-import useLiked from "@/lib/likedStore";
+import { useLikedItems } from "@/lib/hooks";
 
-const Card: React.FC<ProductType> = (props) => {
-  const [isLiked, setLike] = useState(false);
-  const { likedItems, setItemToLikedList, deleteItemFromLikedList } =
-    useLiked();
+type PropsType = ProductType;
 
-  useEffect(() => {
-    likedItems.includes(props) ? setLike(true) : setLike(false);
-  }, [likedItems, props]);
-
-  function handleLikeClick() {
-    isLiked ? deleteItemFromLikedList(props.id) : setItemToLikedList(props);
-  }
+const Item: React.FC<PropsType> = (props) => {
+  const [isLiked, handleLikeClick] = useLikedItems(props);
 
   return (
     <div className="flex-1 min-w-72 flex-col gap-6 flex p-4 bg-white shadow-2xl shadow-black/10 rounded-2xl relative select-none">
@@ -38,9 +31,12 @@ const Card: React.FC<ProductType> = (props) => {
           {props.price} руб.
         </h2>
         <div className="w-full flex gap-2 mt-8">
-          <button className="bg-gray-100 py-3 w-full rounded-xl">
-            Подробнее
-          </button>
+          <Link to={props.id} className="w-full">
+            <button className="bg-gray-100 py-3 w-full rounded-xl">
+              Подробнее
+            </button>
+          </Link>
+
           <button className="bg-orange-500 py-3 w-full rounded-xl text-white">
             {" "}
             в Корзину
@@ -51,4 +47,4 @@ const Card: React.FC<ProductType> = (props) => {
   );
 };
 
-export default Card;
+export default Item;

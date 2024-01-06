@@ -6,7 +6,7 @@ export async function fetchAll() {
   return elem.data as ProductType[];
 }
 
-export async function fetchById(id: string) {
+export async function fetchById(id: string | undefined) {
   const elem = await api.get(`/${id}`);
   return elem.data as ProductType;
 }

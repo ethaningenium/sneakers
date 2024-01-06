@@ -4,7 +4,7 @@ export type ProductType = {
   title: string;
   description: string;
   images: string[];
-  colors: string[];
+  colors: ("black" | "brown" | "white" | "gray" | "red")[];
   sizes: number[];
   price: number;
   oldprice: number;

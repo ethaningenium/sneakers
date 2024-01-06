@@ -11,6 +11,14 @@ button:hover{
   scale: 0.98;
 }
 
+button:disabled:hover{
+  scale: 1;
+}
+
+button:disabled:active{
+  scale: 1;
+}
+
 button:active{
   scale: 0.9;
 }
