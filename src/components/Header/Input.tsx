@@ -17,6 +17,7 @@ const Input = () => {
         placeholder="Что хотите найти?"
         className="bg-transparent w-full placeholder:text-zinc-400 focus:outline-none pl-8"
       />
+      
       <Show when={!!value}>
         <X
           className="absolute right-16 text-zinc-300 hover:text-zinc-600 cursor-pointer"
