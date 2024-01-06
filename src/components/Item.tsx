@@ -17,12 +17,14 @@ const Item: React.FC<PropsType> = (props) => {
       >
         <Heart fill={isLiked ? "red" : "#D9D9D9"} stroke="none" />
       </button>
-      <img
-        src={props.images[0]}
-        alt="seakers"
-        className="h-56 w-full object-cover rounded-xl"
-        loading="lazy"
-      />
+      <Link to={props.id} className="w-full h-56">
+        <img
+          src={props.images[0]}
+          alt="seakers"
+          className="h-56 w-full object-cover rounded-xl"
+          loading="lazy"
+        />
+      </Link>
       <div className="w-full flex flex-col gap-1 items-center">
         <h3 className="text-sm font-light text-gray-500 line-clamp-1">
           {props.title}

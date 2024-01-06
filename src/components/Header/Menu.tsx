@@ -22,7 +22,7 @@ const Menu = () => {
       ></div>
       <div
         className={cn(
-          "w-72 bg-white z-50 p-4 h-screen fixed top-0 right-0 shadow-2xl shadow-black/20 duration-300",
+          "w-72 bg-white z-50 p-4 h-dvh fixed top-0 right-0 shadow-2xl shadow-black/20 duration-300",
           {
             "-right-80": !open,
           }

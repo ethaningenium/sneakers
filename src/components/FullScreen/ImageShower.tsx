@@ -6,6 +6,7 @@ import React, { useState } from "react";
 const ImageShower: React.FC<ProductType> = (props) => {
   const [currentImage, setCurrentImage] = useState(props.images[0]);
   const [isLiked, handleLikeClick] = useLikedItems(props);
+
   return (
     <div className="flex lg:flex-row flex-col-reverse justify-end lg:justify-normal h-auto w-full md:w-1/2 gap-4 relative">
       <div className="flex lg:flex-col gap-2 lg:w-auto lg:h-full lg:overflow-auto overflow-x-scroll">
