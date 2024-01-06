@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button{
+  scale: 1;
+  transition: 100ms ease-in-out;
+}
+
+button:hover{
+  scale: 0.98;
+}
+
+button:active{
+  scale: 0.9;
+}
