@@ -1,12 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Heart } from "lucide-react";
 import { ProductType } from "@/lib/contract";
+import useLiked from "@/lib/likedStore";
 
 const Card: React.FC<ProductType> = (props) => {
   const [isLiked, setLike] = useState(false);
+  const { likedItems, setItemToLikedList, deleteItemFromLikedList } =
+    useLiked();
+
+  useEffect(() => {
+    likedItems.includes(props) ? setLike(true) : setLike(false);
+  }, [likedItems, props]);
+
+  function handleLikeClick() {
+    isLiked ? deleteItemFromLikedList(props.id) : setItemToLikedList(props);
+  }
+
   return (
     <div className="flex-1 min-w-72 flex-col gap-6 flex p-4 bg-white shadow-2xl shadow-black/10 rounded-2xl relative select-none">
-      <button className="absolute top-6 right-6 rounded-full bg-white shadow-xl shadow-black/10 p-2 cursor-pointer transition">
+      <button
+        onClick={handleLikeClick}
+        className="absolute top-6 right-6 rounded-full bg-white shadow-xl shadow-black/10 p-2 cursor-pointer transition"
+      >
         <Heart fill={isLiked ? "red" : "#D9D9D9"} stroke="none" />
       </button>
       <img

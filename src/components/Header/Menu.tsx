@@ -12,8 +12,9 @@ const Menu = () => {
         className="w-auto h-auto p-2 hover:bg-zinc-100 rounded-xl duration-200 active:bg-zinc-200 cursor-pointer"
       />
       <div
+        onClick={() => setOpen((prev) => !prev)}
         className={cn(
-          "fixed top-0 left-0 w-screen h-screen backdrop-blur opacity-0 duration-300 hidden",
+          "fixed top-0 left-0 w-screen h-screen backdrop-blur opacity-0 duration-300 hidden z-40",
           {
             "opacity-100 flex": open,
           }

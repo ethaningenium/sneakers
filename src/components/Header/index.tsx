@@ -6,7 +6,7 @@ import Cart from "./Cart";
 
 const Header = () => {
   return (
-    <header className="w-full flex flex-col items-center">
+    <header className="w-full flex flex-col items-center sticky top-0 z-30 bg-white">
       <Top />
       <div className="px-4 w-full md:px-0 md:container py-3 flex justify-between md:justify-normal md:gap-8 lg:gap-20 items-center">
         <Logo className="w-28 md:w-64" />
