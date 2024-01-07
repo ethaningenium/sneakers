@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Heart, ShoppingBag } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
 
 import useLiked from "@/lib/likedStore";
 import Icons from "./Icons";
@@ -8,9 +8,10 @@ import {
   getCartFromLocalStorage,
   getLikedItemsFromLocalStorage,
 } from "@/lib/ls";
+import LikedItemDrawer from "./LikedItemDrawer";
 
 const Cart = () => {
-  const { likedItems, setInitialLikedItems } = useLiked();
+  const { setInitialLikedItems } = useLiked();
   const { cartitems, setInitialCartItems } = useCart();
 
   useEffect(() => {
@@ -20,18 +21,16 @@ const Cart = () => {
 
   return (
     <>
-      <Icons
-        Icon={ShoppingBag}
-        count={cartitems.length}
-        stroke={1.5}
-        text="Корзина"
-      />
-      <Icons
-        Icon={Heart}
-        count={likedItems.length}
-        stroke={1.5}
-        text="Избранное"
-      />
+      <button>
+        <Icons
+          Icon={ShoppingBag}
+          count={cartitems.length}
+          stroke={1.5}
+          text="Корзина"
+        />
+      </button>
+
+      <LikedItemDrawer />
     </>
   );
 };
