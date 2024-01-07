@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { ProductType } from "@/lib/contract";
 import { fetchAll } from "@/lib/fetch";
@@ -13,6 +13,10 @@ const FullScreenItem: React.FC<ProductType> = (props) => {
     queryKey: ["items"],
     queryFn: fetchAll,
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className="flex flex-col items-center ">
