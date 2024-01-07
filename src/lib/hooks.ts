@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import useLiked from "./likedStore";
 import { ProductType } from "./contract";
+import {
+  setLikedItemsToLocalStorage,
+  deleteLikedItemFromLocalStorage,
+} from "./ls";
 
 type LikedItemsHookType = (
   props: ProductType
@@ -16,7 +20,13 @@ export const useLikedItems: LikedItemsHookType = (props) => {
   }, [likedItems, props]);
 
   function handleLikeClick() {
-    isLiked ? deleteItemFromLikedList(props.id) : setItemToLikedList(props);
+    if (isLiked) {
+      deleteItemFromLikedList(props.id);
+      deleteLikedItemFromLocalStorage(props.id);
+    } else {
+      setItemToLikedList(props);
+      setLikedItemsToLocalStorage(props.id);
+    }
   }
 
   return [isLiked, handleLikeClick];

@@ -1,11 +1,23 @@
+import { useEffect } from "react";
+import { Heart, ShoppingBag } from "lucide-react";
+
 import useLiked from "@/lib/likedStore";
 import Icons from "./Icons";
-import { Heart, ShoppingBag } from "lucide-react";
 import useCart from "@/lib/cartStore";
+import {
+  getCartFromLocalStorage,
+  getLikedItemsFromLocalStorage,
+} from "@/lib/ls";
 
 const Cart = () => {
-  const { likedItems } = useLiked();
-  const { cartitems } = useCart();
+  const { likedItems, setInitialLikedItems } = useLiked();
+  const { cartitems, setInitialCartItems } = useCart();
+
+  useEffect(() => {
+    setInitialLikedItems(getLikedItemsFromLocalStorage());
+    setInitialCartItems(getCartFromLocalStorage());
+  }, [setInitialLikedItems, setInitialCartItems]);
+
   return (
     <>
       <Icons

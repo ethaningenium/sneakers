@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 
-type CartType = {
+export type CartType = {
   id: string;
   size: number;
   color: string;
@@ -10,6 +10,7 @@ type CartType = {
 interface BearState {
   cartitems: CartType[];
   setItemToCart: (item: CartType) => void;
+  setInitialCartItems: (items: CartType[]) => void;
   deleteItemFromCart: (id: string) => void;
 }
 
@@ -18,6 +19,9 @@ const useCart = create<BearState>()(
     cartitems: [],
     setItemToCart: (item) => {
       set((state) => ({ cartitems: [...state.cartitems, item] }));
+    },
+    setInitialCartItems: (items) => {
+      set(() => ({ cartitems: items }));
     },
     deleteItemFromCart: (id) => {
       set((state) => ({

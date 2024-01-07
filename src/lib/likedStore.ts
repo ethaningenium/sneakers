@@ -5,6 +5,7 @@ import { ProductType } from "./contract";
 interface BearState {
   likedItems: string[];
   setItemToLikedList: (item: ProductType) => void;
+  setInitialLikedItems: (items: string[]) => void;
   deleteItemFromLikedList: (id: string) => void;
 }
 
@@ -13,6 +14,9 @@ const useLiked = create<BearState>()(
     likedItems: [],
     setItemToLikedList: (item) => {
       set((state) => ({ likedItems: [...state.likedItems, item.id] }));
+    },
+    setInitialLikedItems: (items) => {
+      set(() => ({ likedItems: items }));
     },
     deleteItemFromLikedList: (id) => {
       set((state) => ({

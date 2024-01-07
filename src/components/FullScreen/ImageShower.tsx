@@ -17,12 +17,14 @@ const ImageShower: React.FC<ProductType> = (props) => {
               onClick={() => setCurrentImage(image)}
               src={image}
               alt="img"
+              loading="lazy"
               className="w-32 lg:w-auto rounded-lg object-cover flex-1 hover:opacity-80 active:scale-95 transition duration-300 cursor-pointer"
             />
           );
         })}
       </div>
       <img
+        loading="lazy"
         className="lg:w-2/3 object-cover rounded-2xl"
         src={currentImage}
         alt="img"
