@@ -16,7 +16,7 @@ const FullScreenItem: React.FC<ProductType> = (props) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [props]);
 
   return (
     <main className="flex flex-col items-center ">

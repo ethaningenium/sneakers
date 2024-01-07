@@ -4,7 +4,7 @@ import { Heart } from "lucide-react";
 import React, { useState } from "react";
 
 const ImageShower: React.FC<ProductType> = (props) => {
-  const [currentImage, setCurrentImage] = useState(props.images[0]);
+  const [currentImageIndex, setCurrentImage] = useState(0);
   const [isLiked, handleLikeClick] = useLikedItems(props);
 
   return (
@@ -14,7 +14,7 @@ const ImageShower: React.FC<ProductType> = (props) => {
           return (
             <img
               key={i}
-              onClick={() => setCurrentImage(image)}
+              onClick={() => setCurrentImage(i)}
               src={image}
               alt="img"
               loading="lazy"
@@ -26,7 +26,7 @@ const ImageShower: React.FC<ProductType> = (props) => {
       <img
         loading="lazy"
         className="lg:w-2/3 object-cover rounded-2xl"
-        src={currentImage}
+        src={props.images[currentImageIndex]}
         alt="img"
       />
       <button
