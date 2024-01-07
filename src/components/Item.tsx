@@ -17,7 +17,7 @@ const Item: React.FC<PropsType> = (props) => {
       >
         <Heart fill={isLiked ? "red" : "#D9D9D9"} stroke="none" />
       </button>
-      <Link to={props.id} className="w-full h-56">
+      <Link to={"/" + props.id} className="w-full h-56">
         <img
           src={props.images[0]}
           alt="seakers"
