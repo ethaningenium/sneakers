@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { ShoppingBag } from "lucide-react";
 
-import useLiked from "@/lib/likedStore";
+import useLiked from "@/lib/zustand/likedStore";
 import Icons from "./Icons";
-import useCart from "@/lib/cartStore";
+import useCart from "@/lib/zustand/cartStore";
 import {
   getCartFromLocalStorage,
   getLikedItemsFromLocalStorage,

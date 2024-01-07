@@ -1,4 +1,4 @@
-import { CartType } from "./cartStore";
+import { CartType } from "./contract";
 
 export const getLikedItemsFromLocalStorage = () => {
   const likedItems = localStorage.getItem("likedItems");

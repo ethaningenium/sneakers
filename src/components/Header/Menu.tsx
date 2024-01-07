@@ -1,6 +1,6 @@
 import { Menu as Hamburger } from "lucide-react";
 import { useState } from "react";
-import { cn } from "@/lib/twMerge";
+import { cn } from "@/lib/utils";
 import MenuContent from "./MenuContent";
 
 const Menu = () => {

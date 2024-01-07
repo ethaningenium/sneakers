@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { ProductType } from "./contract";
+import { ProductType } from "../contract";
 
 interface BearState {
   likedItems: string[];

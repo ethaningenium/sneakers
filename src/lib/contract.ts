@@ -11,3 +11,11 @@ export type ProductType = {
   rating: number;
   isnew: boolean;
 };
+
+export type CartType = {
+  id: string;
+  size: number;
+  color: string;
+};
+
+export type LikedItemType = string;

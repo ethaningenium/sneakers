@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { useQuery } from "@tanstack/react-query";
 import { fetchAll } from "@/lib/fetch";
-import useLiked from "@/lib/likedStore";
+import useLiked from "@/lib/zustand/likedStore";
 import { ProductType } from "@/lib/contract";
 import { Heart } from "lucide-react";
 import LikedDrawerItem from "./LikedDrawerItem";

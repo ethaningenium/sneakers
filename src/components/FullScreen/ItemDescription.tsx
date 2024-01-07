@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ProductType } from "@/lib/contract";
-import { cn } from "@/lib/twMerge";
-import useCart from "@/lib/cartStore";
+import { cn } from "@/lib/utils";
+import useCart from "@/lib/zustand/cartStore";
 
 const ItemDescription: React.FC<ProductType> = (props) => {
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);

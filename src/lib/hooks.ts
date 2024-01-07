@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useLiked from "./likedStore";
+import useLiked from "./zustand/likedStore";
 import { ProductType } from "./contract";
 import {
   setLikedItemsToLocalStorage,
