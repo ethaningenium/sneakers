@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { routePath } from "./route";
+import routes from "@/assets/routes.json";
 
 const Top = () => {
   return (
@@ -11,7 +11,7 @@ const Top = () => {
           <span>Москва</span>
         </div>
         <div className="flex gap-12 items-center">
-          {routePath.map((elem, i) => {
+          {routes.map((elem, i) => {
             return (
               <Link key={i} to={elem.path} preventScrollReset={true}>
                 {elem.title}

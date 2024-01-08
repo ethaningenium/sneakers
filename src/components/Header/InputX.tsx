@@ -1,6 +1,7 @@
 import { Search, X } from "lucide-react";
 import { useRef, useState } from "react";
-import Show from "../Show";
+
+import Show from "@/components/Common/Show";
 
 const Input = () => {
   const [value, setValue] = useState("");
@@ -17,7 +18,7 @@ const Input = () => {
         placeholder="Что хотите найти?"
         className="bg-transparent w-full placeholder:text-zinc-400 focus:outline-none pl-8"
       />
-      
+
       <Show when={!!value}>
         <X
           className="absolute right-16 text-zinc-300 hover:text-zinc-600 cursor-pointer"

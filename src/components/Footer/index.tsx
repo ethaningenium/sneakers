@@ -1,6 +1,7 @@
-import Logo from "../Logo";
-import { routePath } from "../Header/route";
 import { Link } from "react-router-dom";
+
+import Logo from "@/components/Common/Logo";
+import routes from "@/assets/routes.json";
 import Email from "./Email";
 
 const Footer = () => {
@@ -15,7 +16,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-3 lg:items-start items-center">
           <h3 className="font-medium text-white mb-4">Разделы</h3>
-          {routePath.map((elem, i) => {
+          {routes.map((elem, i) => {
             return (
               <Link
                 key={i}

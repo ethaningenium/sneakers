@@ -1,6 +1,10 @@
 import React from "react";
 
-const Rating: React.FC<{ rating: number }> = ({ rating }) => {
+type PropsType = {
+  rating: number;
+};
+
+const Rating: React.FC<PropsType> = ({ rating }) => {
   return (
     <div className="flex items-center justify-start gap-[1px]">
       <svg

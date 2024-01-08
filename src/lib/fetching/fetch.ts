@@ -1,5 +1,5 @@
-import api from "@/lib/axios";
-import { ProductType } from "@/lib/contract";
+import api from "@/lib/fetching/axios";
+import { ProductType } from "@/lib/types/contract";
 
 export async function fetchAll() {
   const elem = await api.get("/");

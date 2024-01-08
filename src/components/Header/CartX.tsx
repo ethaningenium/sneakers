@@ -7,8 +7,8 @@ import useCart from "@/lib/zustand/cartStore";
 import {
   getCartFromLocalStorage,
   getLikedItemsFromLocalStorage,
-} from "@/lib/ls";
-import LikedItemDrawer from "./LikedItemDrawer";
+} from "@/lib/tools/ls";
+import LikedItemDrawer from "./LikedItemDrawerX";
 
 const Cart = () => {
   const { setInitialLikedItems } = useLiked();

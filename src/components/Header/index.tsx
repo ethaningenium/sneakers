@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 
-import Logo from "../Logo";
-import Input from "./Input";
-import Top from "./Top";
-import Menu from "./Menu";
-import Cart from "./Cart";
+import Logo from "@/components/Common/Logo";
+import Input from "./InputX";
+import Top from "./TopHeader";
+import Menu from "./MenuX";
+import Cart from "./CartX";
 
 const Header = () => {
   return (

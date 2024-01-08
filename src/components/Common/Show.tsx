@@ -1,12 +1,11 @@
 import { ReactNode } from "react";
 
-const Show = ({
-  children,
-  when = false,
-}: {
+type ShowPropsType = {
   children: ReactNode;
   when?: boolean;
-}) => {
+};
+
+const Show: React.FC<ShowPropsType> = ({ children, when = false }) => {
   return when ? children : null;
 };
 

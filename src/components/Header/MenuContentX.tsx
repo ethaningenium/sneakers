@@ -1,11 +1,15 @@
 import { X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { routePath } from "./route";
-import Input from "./Input";
 
-import Cart from "./Cart";
+import routes from "@/assets/routes.json";
+import Input from "./InputX";
+import Cart from "./CartX";
 
-const MenuContent = (props: { setOpen: (elem: boolean) => void }) => {
+type MenuContentProps = {
+  setOpen: (elem: boolean) => void;
+};
+
+const MenuContent: React.FC<MenuContentProps> = (props) => {
   return (
     <div className="w-full h-full flex flex-col items-center gap-8">
       <div className="w-full flex justify-end">
@@ -19,7 +23,7 @@ const MenuContent = (props: { setOpen: (elem: boolean) => void }) => {
         <Input />
       </div>
       <div className="flex flex-col items-center gap-4">
-        {routePath.map((elem, i) => {
+        {routes.map((elem, i) => {
           return (
             <Link key={i} to={elem.path} className="text-zinc-600">
               {elem.title}

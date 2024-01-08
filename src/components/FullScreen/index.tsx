@@ -1,19 +1,12 @@
 import React, { useEffect } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { ProductType } from "@/lib/contract";
-import { fetchAll } from "@/lib/fetch";
+import { ProductType } from "@/lib/types/contract";
 
-import ImageShower from "./ImageShower";
-import Reviews from "./Reviews";
-import SimilarItems from "./SimilarItems";
-import ItemDescription from "./ItemDescription";
+import ImageShower from "./ImageShowerX";
+import Reviews from "./ReviewX";
+import SimilarItems from "./SimilarItemsX";
+import ItemDescription from "./ItemDescriptionX";
 
 const FullScreenItem: React.FC<ProductType> = (props) => {
-  const { data } = useQuery({
-    queryKey: ["items"],
-    queryFn: fetchAll,
-  });
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [props]);
@@ -26,7 +19,7 @@ const FullScreenItem: React.FC<ProductType> = (props) => {
           <ItemDescription {...props} />
         </section>
         <Reviews />
-        {data ? <SimilarItems items={data} /> : null}
+        <SimilarItems />
       </div>
     </main>
   );

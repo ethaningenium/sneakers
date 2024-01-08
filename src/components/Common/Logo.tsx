@@ -1,6 +1,9 @@
-const Logo: React.FC<
-  React.SVGProps<SVGSVGElement> & { orange?: string; blue?: string }
-> = (props) => {
+type PropsType = React.SVGProps<SVGSVGElement> & {
+  orange?: string;
+  blue?: string;
+};
+
+const Logo: React.FC<PropsType> = (props) => {
   const logoOrange = props.orange || "#F97316";
   const logoBlue = props.blue || "#1E3A8A";
   //blue: blue-900, orange: orange-500

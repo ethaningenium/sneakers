@@ -1,7 +1,8 @@
 import { Menu as Hamburger } from "lucide-react";
 import { useState } from "react";
-import { cn } from "@/lib/utils";
-import MenuContent from "./MenuContent";
+
+import { cn } from "@/lib/tools/utils";
+import MenuContent from "./MenuContentX";
 
 const Menu = () => {
   const [open, setOpen] = useState(false);

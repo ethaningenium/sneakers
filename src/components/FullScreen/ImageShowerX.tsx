@@ -1,7 +1,8 @@
-import { ProductType } from "@/lib/contract";
-import { useLikedItems } from "@/lib/hooks";
 import { Heart } from "lucide-react";
 import React, { useState } from "react";
+
+import { ProductType } from "@/lib/types/contract";
+import { useLikedItems } from "@/lib/tools/hooks";
 
 const ImageShower: React.FC<ProductType> = (props) => {
   const [currentImageIndex, setCurrentImage] = useState(0);

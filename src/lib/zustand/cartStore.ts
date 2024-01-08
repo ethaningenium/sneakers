@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { CartType } from "../contract";
+import { CartType } from "../types/contract";
 
 interface BearState {
   cartitems: CartType[];

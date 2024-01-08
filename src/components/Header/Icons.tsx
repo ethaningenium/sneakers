@@ -1,5 +1,6 @@
 import { LucideIcon } from "lucide-react";
-import Show from "../Show";
+
+import Show from "@/components/Common/Show";
 
 type IconPropsType = {
   Icon: LucideIcon;

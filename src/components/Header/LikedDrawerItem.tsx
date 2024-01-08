@@ -1,7 +1,8 @@
 import React from "react";
-import { ProductType } from "@/lib/contract";
 import { X } from "lucide-react";
 import { Link } from "react-router-dom";
+
+import { ProductType } from "@/lib/types/contract";
 
 type PropsType = {
   item: ProductType;

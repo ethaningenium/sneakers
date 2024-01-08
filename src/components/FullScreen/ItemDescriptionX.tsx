@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { ProductType } from "@/lib/contract";
-import { cn } from "@/lib/utils";
+
+import { ProductType } from "@/lib/types/contract";
+import { cn } from "@/lib/tools/utils";
 import useCart from "@/lib/zustand/cartStore";
 
 const ItemDescription: React.FC<ProductType> = (props) => {

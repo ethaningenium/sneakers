@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Heart } from "lucide-react";
-import { ProductType } from "@/lib/contract";
-import { useLikedItems } from "@/lib/hooks";
+
+import { ProductType } from "@/lib/types/contract";
+import { useLikedItems } from "@/lib/tools/hooks";
 
 type PropsType = ProductType;
 

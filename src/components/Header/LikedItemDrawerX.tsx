@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
+import { Heart } from "lucide-react";
 
 import { useQuery } from "@tanstack/react-query";
-import { fetchAll } from "@/lib/fetch";
+import { fetchAll } from "@/lib/fetching/fetch";
 import useLiked from "@/lib/zustand/likedStore";
-import { ProductType } from "@/lib/contract";
-import { Heart } from "lucide-react";
+import { ProductType } from "@/lib/types/contract";
 import LikedDrawerItem from "./LikedDrawerItem";
-import { deleteLikedItemFromLocalStorage } from "@/lib/ls";
+import { deleteLikedItemFromLocalStorage } from "@/lib/tools/ls";
 import {
   Drawer,
   DrawerContent,

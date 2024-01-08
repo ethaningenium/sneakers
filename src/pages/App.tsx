@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Item from "@/components/Item";
+import Item from "@/components/Common/Item";
 import { useQuery } from "@tanstack/react-query";
-import { fetchAll } from "@/lib/fetch";
+import { fetchAll } from "@/lib/fetching/fetch";
 
 function App() {
   const { data } = useQuery({

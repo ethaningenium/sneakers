@@ -3,10 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import FullScreenItem from "@/components/FullScreen/FullScreenItem";
-import Show from "@/components/Show";
+import FullScreenItem from "@/components/FullScreen";
 
-import { fetchById } from "@/lib/fetch";
+import { fetchById } from "@/lib/fetching/fetch";
 
 const ItemPage = () => {
   const { id } = useParams();
@@ -18,9 +17,7 @@ const ItemPage = () => {
   return (
     <>
       <Header />
-      <Show when={!isLoading}>
-        {data ? <FullScreenItem {...data} /> : null}
-      </Show>
+      {data && !isLoading ? <FullScreenItem {...data} /> : null}
       <Footer />
     </>
   );
