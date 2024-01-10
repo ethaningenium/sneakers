@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import Logo from "@/components/Common/Logo";
 import Input from "./InputX";
-import Top from "./TopHeader";
+import Top from "./TopHeaderX";
 import Menu from "./MenuX";
 import Cart from "./CartX";
 

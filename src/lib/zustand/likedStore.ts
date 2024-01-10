@@ -1,12 +1,12 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
-import { ProductType } from "../types/contract";
+import { ProductType, LikedItemType } from "../types/contract";
 
 interface BearState {
-  likedItems: string[];
+  likedItems: LikedItemType[];
   setItemToLikedList: (item: ProductType) => void;
-  setInitialLikedItems: (items: string[]) => void;
-  deleteItemFromLikedList: (id: string) => void;
+  setInitialLikedItems: (items: LikedItemType[]) => void;
+  deleteItemFromLikedList: (id: LikedItemType) => void;
 }
 
 const useLiked = create<BearState>()(
