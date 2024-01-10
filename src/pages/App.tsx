@@ -3,9 +3,10 @@ import Footer from "@/components/Footer";
 import Item from "@/components/Common/Item";
 import { useQuery } from "@tanstack/react-query";
 import { fetchAll } from "@/lib/fetching/fetch";
+import ItemLoading from "@/components/Common/ItemLoading";
 
 function App() {
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["items"],
     queryFn: fetchAll,
   });
@@ -17,6 +18,10 @@ function App() {
         {data?.map((elem) => {
           return <Item key={elem.id} {...elem} />;
         })}
+        {isLoading &&
+          [...Array(3)].map(() => {
+            return <ItemLoading />;
+          })}
       </div>
       <Footer />
     </>

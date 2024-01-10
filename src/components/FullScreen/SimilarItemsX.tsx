@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import Item from "@/components/Common/Item";
 import { fetchAll } from "@/lib/fetching/fetch";
+import ItemLoading from "@/components/Common/ItemLoading";
 
 const SimilarItems = () => {
   const { data } = useQuery({
@@ -14,9 +15,13 @@ const SimilarItems = () => {
         Похижие товары:
       </h2>
       <div className="w-full flex overflow-x-scroll gap-4 pb-16 pl-2">
-        {data?.map((item) => {
-          return <Item key={item.id} {...item} />;
-        })}
+        {data
+          ? data?.map((item) => {
+              return <Item key={item.id} {...item} />;
+            })
+          : [...Array(3)].map(() => {
+              return <ItemLoading />;
+            })}
       </div>
     </section>
   );
