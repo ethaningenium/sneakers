@@ -4,10 +4,7 @@ import { ShoppingBag } from "lucide-react";
 import useLiked from "@/lib/zustand/likedStore";
 import Icons from "./Icons";
 import useCart from "@/lib/zustand/cartStore";
-import {
-  getCartFromLocalStorage,
-  getLikedItemsFromLocalStorage,
-} from "@/lib/tools/ls";
+import { getLikedItemsFromLocalStorage } from "@/lib/tools/ls";
 import LikedItemDrawer from "./LikedItemDrawerX";
 
 const Cart = () => {
@@ -16,7 +13,7 @@ const Cart = () => {
 
   useEffect(() => {
     setInitialLikedItems(getLikedItemsFromLocalStorage());
-    setInitialCartItems(getCartFromLocalStorage());
+    // setInitialCartItems(getCartFromLocalStorage());
   }, [setInitialLikedItems, setInitialCartItems]);
 
   return (
