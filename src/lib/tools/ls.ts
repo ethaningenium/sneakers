@@ -1,4 +1,4 @@
-import { CartType } from "./types/contract";
+import { CartType } from "@/lib/types/contract";
 
 export const getLikedItemsFromLocalStorage = () => {
   const likedItems = localStorage.getItem("likedItems");
@@ -20,8 +20,8 @@ export const setLikedItemsToLocalStorage = (likedItem: string) => {
 };
 
 export const deleteLikedItemFromLocalStorage = (likedItem: string) => {
-  const likedItems = getLikedItemsFromLocalStorage();
-  likedItems.splice(likedItems.indexOf(likedItem), 1);
+  let likedItems = getLikedItemsFromLocalStorage();
+  likedItems = likedItems.filter((elem) => elem !== likedItem);
   localStorage.setItem("likedItems", JSON.stringify(likedItems));
 };
 
@@ -38,14 +38,6 @@ export const getCartFromLocalStorage = () => {
   return [];
 };
 
-export const setCartToLocalStorage = (cartItem: CartType) => {
-  const cart = getCartFromLocalStorage();
-  cart.push(cartItem);
-  localStorage.setItem("CartItems", JSON.stringify(cart));
-};
-
-export const deleteCartFromLocalStorage = (cartItem: CartType) => {
-  const cart = getCartFromLocalStorage();
-  cart.splice(cart.indexOf(cartItem), 1);
-  localStorage.setItem("CartItems", JSON.stringify(cart));
+export const setCartToLocalStorage = (cartItems: CartType[]) => {
+  localStorage.setItem("CartItems", JSON.stringify(cartItems));
 };

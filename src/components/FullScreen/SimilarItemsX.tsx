@@ -16,11 +16,11 @@ const SimilarItems = () => {
       </h2>
       <div className="w-full flex overflow-x-scroll gap-4 pb-16 pl-2">
         {data
-          ? data?.map((item) => {
+          ? data.map((item) => {
               return <Item key={item.id} {...item} />;
             })
-          : [...Array(3)].map(() => {
-              return <ItemLoading />;
+          : [...Array(3)].map((_, i) => {
+              return <ItemLoading key={i} />;
             })}
       </div>
     </section>

@@ -35,7 +35,15 @@ const ItemDescription: React.FC<ProductType> = (props) => {
 
   function handleAddToCart() {
     if (currentColor && currentSize) {
-      setItemToCart({ id: props.id, color: currentColor, size: currentSize });
+      setItemToCart({
+        id: props.id,
+        color: currentColor,
+        size: currentSize,
+        title: props.title,
+        price: props.price,
+        image: props.images[0],
+        count: 1,
+      });
     }
   }
   return (

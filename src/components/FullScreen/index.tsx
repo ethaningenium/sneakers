@@ -22,7 +22,7 @@ const FullScreenItem = () => {
 
   return (
     <main className="flex flex-col items-center ">
-      <div className="container py-8 sm:py-16 sm:px-0 px-4 flex flex-col gap-16">
+      <div className="container py-8 sm:py-16  px-4 flex flex-col gap-16">
         <section className="w-full flex md:flex-row flex-col gap-8">
           {data ? <ImageShower {...data} /> : <ImageShowerLoading />}
           {data ? <ItemDescription {...data} /> : <ItemDescriptionLoading />}

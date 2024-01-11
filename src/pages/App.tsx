@@ -19,8 +19,8 @@ function App() {
           return <Item key={elem.id} {...elem} />;
         })}
         {isLoading &&
-          [...Array(3)].map(() => {
-            return <ItemLoading />;
+          [...Array(3)].map((_, i) => {
+            return <ItemLoading key={i} />;
           })}
       </div>
       <Footer />
