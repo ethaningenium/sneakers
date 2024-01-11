@@ -1,25 +1,41 @@
 import { X } from "lucide-react";
+import Counter from "./Counter";
 
-const CartItem = () => {
+export type CartType = {
+  id: string;
+  price: number;
+  title: string;
+  image: string;
+  size: number;
+  color: string;
+  count: number;
+  deleteItem: () => void;
+};
+
+const CartItem: React.FC<CartType> = (props) => {
   return (
-    <div className="flex gap-28 items-center justify-center">
-      <div className="flex gap-4 items-center">
+    <div className="flex justify-between items-center border-r border-b border-gray-200 py-4 pr-4">
+      <div className="flex gap-4">
         <img
-          className="w-44"
-          src="https://haslestore.com/_next/image?url=https%3A%2F%2Fhaslestore.com%2Fstorage%2Fimport_files%2Fb1%2Fb12be1af74a511eebaf12c44fd7ae203_7297a9ff7efc11eebaf12c44fd7ae203.jpg&w=3840&q=75"
+          className="w-32 object-contain rounded-lg"
+          src={props.image}
           alt="NIKE AIR JORDAN 13 RETRO"
         />
-        <span>Nike Air Jordan 13 Retro</span>
+        <div className="flex flex-col justify-center gap-2 h-auto">
+          <h3 className="font-semibold text-gray-700">{props.title}</h3>
+          <span className="text-xs text-gray-500">Размер: {props.size}</span>
+          <span className="text-xs text-gray-500">Цвет: {props.color}</span>
+        </div>
       </div>
 
-      <div className="flex gap-1">
-        <div>-</div>
-        <div>1</div>
-        <div>+</div>
-      </div>
+      <div className="flex gap-20 items-center">
+        <Counter count={props.count} />
 
-      <span>4520 руб.</span>
-      <X />
+        <span className="text-lg font-semibold">{props.price} руб.</span>
+        <button className="text-gray-500" onClick={props.deleteItem}>
+          <X size={16} />
+        </button>
+      </div>
     </div>
   );
 };
