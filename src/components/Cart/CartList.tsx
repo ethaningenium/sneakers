@@ -2,9 +2,10 @@ import CartItem from "./CartItem";
 import { CartType } from "@/lib/types/contract";
 
 import useCart from "@/lib/zustand/cartStore";
+import EmptyCart from "./EmptyCart";
 
 const CartList = () => {
-  const { cartitems, deleteItemFromCart } = useCart();
+  const { cartitems, deleteItemFromCart, clearCart } = useCart();
 
   function deleteItem(item: CartType) {
     deleteItemFromCart(item);
@@ -14,11 +15,15 @@ const CartList = () => {
     <div className="flex flex-col w-full md:w-2/3">
       <div className="flex items-center justify-between border-b border-gray-200 pb-8">
         <h1 className="text-3xl font-semibold">Корзина</h1>
-        <span className="font-light text-gray-500 text-sm">
+        <button
+          className="font-light text-gray-500 text-sm"
+          onClick={clearCart}
+        >
           Очистить корзину
-        </span>
+        </button>
       </div>
-      <div>
+      <div className="w-full">
+        {cartitems.length === 0 && <EmptyCart />}
         {cartitems.map((elem) => {
           return (
             <CartItem

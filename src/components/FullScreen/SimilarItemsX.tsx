@@ -4,7 +4,11 @@ import Item from "@/components/Common/Item";
 import { fetchAll } from "@/lib/fetching/fetch";
 import ItemLoading from "@/components/Common/ItemLoading";
 
-const SimilarItems = () => {
+type PropsType = {
+  title: string;
+};
+
+const SimilarItems: React.FC<PropsType> = (props) => {
   const { data } = useQuery({
     queryKey: ["items"],
     queryFn: fetchAll,
@@ -12,7 +16,7 @@ const SimilarItems = () => {
   return (
     <section className="w-full flex flex-col gap-8">
       <h2 className="lg:text-3xl text-2xl font-semibold text-gray-900">
-        Похижие товары:
+        {props.title}
       </h2>
       <div className="w-full flex overflow-x-scroll gap-4 pb-16 pl-2">
         {data

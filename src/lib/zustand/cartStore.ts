@@ -1,13 +1,17 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import { CartType } from "../types/contract";
-import { setCartToLocalStorage } from "../tools/ls";
+import {
+  clearCartItemsFromLocalStorage,
+  setCartToLocalStorage,
+} from "../tools/ls";
 
 interface BearState {
   cartitems: CartType[];
   setItemToCart: (item: CartType) => void;
   setInitialCartItems: (items: CartType[]) => void;
   deleteItemFromCart: (item: CartType) => void;
+  clearCart: () => void;
   cartItemInc: (id: string, color: string, size: number) => void;
   cartItemDec: (id: string, color: string, size: number) => void;
 }
@@ -58,6 +62,12 @@ const useCart = create<BearState>()(
           cartitems: cartItems,
         };
       });
+    },
+    clearCart: () => {
+      clearCartItemsFromLocalStorage();
+      set(() => ({
+        cartitems: [],
+      }));
     },
     cartItemInc: (id, color, size) => {
       set((state) => {

@@ -41,3 +41,7 @@ export const getCartFromLocalStorage = () => {
 export const setCartToLocalStorage = (cartItems: CartType[]) => {
   localStorage.setItem("CartItems", JSON.stringify(cartItems));
 };
+
+export const clearCartItemsFromLocalStorage = () => {
+  localStorage.removeItem("CartItems");
+};

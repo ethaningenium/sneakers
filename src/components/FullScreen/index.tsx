@@ -28,7 +28,7 @@ const FullScreenItem = () => {
           {data ? <ItemDescription {...data} /> : <ItemDescriptionLoading />}
         </section>
         <Reviews />
-        <SimilarItems />
+        <SimilarItems title="Похожие товары: " />
       </div>
     </main>
   );
