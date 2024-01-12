@@ -1,4 +1,3 @@
-import React from "react";
 import diamond from "@/assets/diamond.png";
 
 const EmptyCart = () => {
